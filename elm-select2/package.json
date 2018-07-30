@@ -1,0 +1,19 @@
+{
+  "name": "elm-select2",
+  "version": "1.0.0",
+  "description": "This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Dang Van Thanh <chieuhue@gmail.com> (dangthanh.org)",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "select2": "^4.0.6-rc.1"
+  }
+}
