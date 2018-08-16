@@ -70,6 +70,11 @@ route =
 -- UPDATE
 
 
+apiDocuments : String
+apiDocuments =
+    "http://localhost:3000/documents"
+
+
 type Msg
     = NewUrl String
     | UrlChange Navigation.Location
@@ -206,7 +211,7 @@ getDocumentsCmd : Cmd Msg
 getDocumentsCmd =
     let
         url =
-            "http://localhost:3000/documents?_sort=id&_order=desc"
+            apiDocuments ++ "?_sort=id&_order=desc"
 
         request =
             Http.get url decodeDocuments
@@ -218,7 +223,7 @@ getDocumentCmd : Int -> Cmd Msg
 getDocumentCmd id =
     let
         url =
-            "http://localhost:3000/documents/" ++ toString id
+            apiDocuments ++ toString id
 
         request =
             Http.get url decodeDocument
@@ -230,7 +235,7 @@ createDocumentCmd : String -> Cmd Msg
 createDocumentCmd documentTitle =
     let
         url =
-            "http://localhost:3000/documents"
+            apiDocuments
 
         body =
             Http.jsonBody <| encodeNewDocument documentTitle
@@ -256,7 +261,7 @@ saveDocumentCmd : Document -> Cmd Msg
 saveDocumentCmd document =
     let
         url =
-            "http://localhost:3000/documents/" ++ toString document.id
+            apiDocuments ++ toString document.id
 
         body =
             Http.jsonBody <| encodeUpdatedDocument document
@@ -282,7 +287,7 @@ deleteDocumentCmd : String -> Cmd Msg
 deleteDocumentCmd id =
     let
         url =
-            "http://localhost:3000/documents/" ++ id
+            apiDocuments ++ id
 
         request =
             Http.request
