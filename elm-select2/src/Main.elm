@@ -1,14 +1,8 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import App exposing (..)
-import Html exposing (program)
+import Browser
+import Select2 exposing (..)
 
 
-main : Program Never Model Msg
 main =
-    program
-        { view = view
-        , init = init
-        , update = update
-        , subscriptions = subscriptions
-        }
+    Browser.element { init = init, update = update, view = view, subscriptions = subscriptions }
