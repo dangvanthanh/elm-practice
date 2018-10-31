@@ -1,5 +1,8 @@
 import { Elm } from '../src/Main.elm';
 import $ from 'jquery';
+import select2 from 'select2';
+
+select2($);
 
 var app = Elm.Main.init({ node: document.getElementById('app') });
 
@@ -11,12 +14,10 @@ app.ports.output.subscribe(function(options) {
     html: options.map(function(option) {
       return $('<option>', {
         value: option[0],
-        text: option[1],
+        text: option[1]
       });
-    }),
+    })
   }).appendTo($selectContainer);
-
-  console.log(select);
 
   // Initialize Select2, when everything is ready.
   var select2 = $(select).select2();
