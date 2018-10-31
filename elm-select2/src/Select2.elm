@@ -1,4 +1,4 @@
-module Select2 exposing (Model, Msg(..), init, input, options, output, subscriptions, update, view)
+port module Select2 exposing (Model, Msg(..), init, input, options, output, subscriptions, update, view)
 
 import Dict exposing (Dict)
 import Html exposing (Html, div, text)
@@ -7,6 +7,16 @@ import Html.Attributes exposing (id)
 
 type alias Model =
     { selection : Maybe String }
+
+
+modelToString : Model -> String
+modelToString model =
+    case model.selection of
+        Nothing ->
+            "Nothing"
+
+        Just s ->
+            "Just " ++ s
 
 
 init : ( Model, Cmd Msg )
@@ -33,7 +43,7 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ text (toString model)
+        [ text (modelToString model)
         , div [ id "select2-container" ] []
         ]
 

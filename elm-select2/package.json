@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel ./app/index.html"
   },
   "author": "Dang Van Thanh <chieuhue@gmail.com> (dangthanh.org)",
   "license": "MIT",
   "devDependencies": {
     "node-elm-compiler": "^5.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "select2": "^4.0.6-rc.1"
   }
 }

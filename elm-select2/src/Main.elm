@@ -5,4 +5,4 @@ import Select2 exposing (..)
 
 
 main =
-    Browser.element { init = init, update = update, view = view, subscriptions = subscriptions }
+    Browser.element { init = \() -> init, update = update, view = view, subscriptions = subscriptions }
