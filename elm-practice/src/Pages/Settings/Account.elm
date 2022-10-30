@@ -4,6 +4,7 @@ import Html exposing (Html)
 import Layout exposing (Layout)
 import View exposing (View)
 
+
 layout : Layout
 layout =
     Layout.Sidebar
