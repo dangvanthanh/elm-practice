@@ -10,7 +10,7 @@ getFirst150 :
     -> Cmd msg
 getFirst150 options =
     Http.get
-        { url = "http://localhost:5000/api/v2/pokemon?limit=150"
+        { url = "http://localhost:3000/api/v2/pokemon?limit=150"
         , expect = Http.expectJson options.onResponse decoder
         }
 
