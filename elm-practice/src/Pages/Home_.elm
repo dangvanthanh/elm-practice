@@ -41,8 +41,9 @@ type alias Pokemon =
 init : ( Model, Cmd Msg )
 init =
     ( { pokemonData = Api.Loading }
-    , Api.PokemonList.getFirst150 { onResponse = PokemonApiResponded }
-    , Cmd.none
+    , Api.PokemonList.getFirst150
+        { onResponse = PokemonApiResponded
+        }
     )
 
 
@@ -57,7 +58,7 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        PokemonApiResponded (Ok ListOfPokemon) ->
+        PokemonApiResponded (Ok listOfPokemon) ->
             ( { model | pokemonData = Api.Success listOfPokemon }
             , Cmd.none
             )

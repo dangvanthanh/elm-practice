@@ -10,18 +10,19 @@ getFirst150 :
     -> Cmd msg
 getFirst150 options =
     Http.get
-        { url = "https://pokeapi.co/api/v2/pokemon?limit=150"
+        { url = "http://localhost:5000/api/v2/pokemon?limit=150"
         , expect = Http.expectJson options.onResponse decoder
         }
 
 
-decodor : Json.Decode.Decoder (List Pokemon)
-decodor =
+decoder : Json.Decode.Decoder (List Pokemon)
+decoder =
     Json.Decode.field "results" (Json.Decode.list pokemonDecoder)
 
 
 type alias Pokemon =
-    { name : String }
+    { name : String
+    }
 
 
 pokemonDecoder : Json.Decode.Decoder Pokemon
