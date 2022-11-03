@@ -19,7 +19,7 @@ layout { page } =
 
 viewSidebar : Html msg
 viewSidebar =
-    Html.aside [ Attr.class "sidebar" ]
+    Html.aside [ Attr.class "max-w-6xl mx-auto" ]
         [ Html.a [ Attr.href "/" ] [ Html.text "Home" ]
         , Html.a [ Attr.href "/profile/me" ] [ Html.text "Profile" ]
         , Html.a [ Attr.href "/settings/account" ] [ Html.text "Setting" ]

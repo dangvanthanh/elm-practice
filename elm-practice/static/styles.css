@@ -1,6 +1,3 @@
 body {
   margin: 0;}
 
-  .layout {  display: flex; gap: 1rem;}
-
-  .sidebar { display: flex; flex-direction: column; gap: .5rem; }
